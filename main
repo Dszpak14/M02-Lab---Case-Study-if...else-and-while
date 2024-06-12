@@ -1,0 +1,33 @@
+##Dominic Szpak
+##Enter first and last name with gpa that calculates if on deans list or honor roll or neither
+##M02 Lab - Case Study: if...else and while
+
+
+
+def main():
+    while True:
+        # Get the student's last name
+        last_name = input("Enter the student's last name (or 'ZZZ' to quit): ")
+        if last_name == 'ZZZ':
+            break
+        
+        # Get the student's first name
+        first_name = input("Enter the student's first name: ")
+        
+        # Get the student's GPA
+        try:
+            gpa = float(input("Enter the student's GPA: "))
+        except ValueError:
+            print("Invalid input. Please enter a numeric value for GPA.")
+            continue
+        
+        # Check for Dean's List or Honor Roll
+        if gpa >= 3.5:
+            print(f"{first_name} {last_name} has made the Dean's List.")
+        elif gpa >= 3.25:
+            print(f"{first_name} {last_name} has made the Honor Roll.")
+        else:
+            print(f"{first_name} {last_name} has not qualified for the Dean's List or Honor Roll.")
+
+if __name__ == "__main__":
+    main()
